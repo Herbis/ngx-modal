@@ -17,7 +17,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3.
         [closeOnEscape]="true|false"
         [closeOnOutsideClick]="true|false"
         (onOpen)="actionOnOpen()"
-        (onOpen)="actionOnClose()"
+        (onClose)="actionOnClose()"
         (onSubmit)="actionOnSubmit()">
 
     <modal-header>
