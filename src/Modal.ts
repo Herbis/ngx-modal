@@ -61,13 +61,13 @@ export class Modal {
     // -------------------------------------------------------------------------
 
     @Output()
-    onOpen = new EventEmitter();
+    onOpen = new EventEmitter(false);
 
     @Output()
-    onClose = new EventEmitter();
+    onClose = new EventEmitter(false);
 
     @Output()
-    onSubmit = new EventEmitter();
+    onSubmit = new EventEmitter(false);
 
     // -------------------------------------------------------------------------
     // Private properties
