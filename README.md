@@ -19,6 +19,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3.
         "ng2-modal": { "main": "index.js", "defaultExtension": "js" }
     }
 }
+```
 
 ## Usage
 
