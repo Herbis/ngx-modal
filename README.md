@@ -23,7 +23,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3.
 
 ## Usage
 
-```typescript
+```html
 <modal  title="Modal title"
         cancelButtonLabel="cancel"
         submitButtonLabel="submit"
