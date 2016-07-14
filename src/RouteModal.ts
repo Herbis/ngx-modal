@@ -109,7 +109,7 @@ export class RouterModal implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.close();
 
-        if (this.backdropElement)
+        if (this.backdropElement && this.backdropElement.parentNode === document.body)
             document.body.removeChild(this.backdropElement);
     }
 

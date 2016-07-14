@@ -1,6 +1,6 @@
 {
   "name": "ng2-modal",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Open modal window (dialog box) for your angular2 applications using bootstrap3.",
   "license": "MIT",
   "readmeFilename": "README.md",
