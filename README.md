@@ -21,7 +21,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
     }
     ```
 
-## Usage
+## Simple Modal
 
 ```html
 <modal  title="Modal title"
@@ -49,6 +49,11 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
         
 </modal>
 ```
+
+## Router Modal
+
+If you want your modals to be opened within routes,
+then `<route-modal></route-modal>` should be used instead.
 
 ## Sample
 
