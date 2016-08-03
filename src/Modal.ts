@@ -72,13 +72,17 @@ export class Modal {
     onSubmit = new EventEmitter(false);
 
     // -------------------------------------------------------------------------
+    // Public properties
+    // -------------------------------------------------------------------------
+
+    isOpened = false;
+
+    // -------------------------------------------------------------------------
     // Private properties
     // -------------------------------------------------------------------------
 
     @ViewChild("modalRoot")
     private modalRoot: ElementRef;
-
-    private isOpened = false;
 
     private backdropElement: HTMLElement;
 
