@@ -136,7 +136,9 @@ export class Modal {
 
     private createBackDrop() {
         this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop", "fade", "in");
+        this.backdropElement.classList.add("modal-backdrop");
+        this.backdropElement.classList.add("fade");
+        this.backdropElement.classList.add("in");
     }
 
 }
