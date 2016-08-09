@@ -59,7 +59,7 @@ then `<route-modal></route-modal>` should be used instead.
 
 ```typescript
 import {Component} from "@angular/core";
-import {Modal} from "ng2-modal";
+import {MODAL_DIRECTIVES} from "ng2-modal";
 
 @Component({
     selector: "app",
@@ -79,7 +79,7 @@ import {Modal} from "ng2-modal";
     </modal>
 </div>
     `,
-    directives: [Modal]
+    directives: [MODAL_DIRECTIVES]
 })
 export class App {
 

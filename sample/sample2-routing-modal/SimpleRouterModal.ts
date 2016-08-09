@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {RouterModal} from "../../src/RouteModal";
+import {RouteModal} from "../../src/RouteModal";
 import {ROUTER_DIRECTIVES} from "@angular/router";
 
 @Component({
@@ -18,7 +18,7 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
 </route-modal>
 `,
     directives: [
-        RouterModal,
+        RouteModal,
         ROUTER_DIRECTIVES
     ]
 })

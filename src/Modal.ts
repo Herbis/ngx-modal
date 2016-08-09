@@ -115,6 +115,7 @@ export class Modal {
         this.onOpen.emit(args);
         document.body.appendChild(this.backdropElement);
         window.setTimeout(() => this.modalRoot.nativeElement.focus(), 0);
+        document.body.className += "modal-open";
     }
 
     close(...args: any[]) {
@@ -124,6 +125,7 @@ export class Modal {
         this.isOpened = false;
         this.onClose.emit(args);
         document.body.removeChild(this.backdropElement);
+        document.body.className.replace(/modal-open\b/, "");
     }
 
     // -------------------------------------------------------------------------

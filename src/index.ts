@@ -1,7 +1,7 @@
 import {Modal} from "./Modal";
-import {RouterModal} from "./RouteModal";
+import {RouteModal} from "./RouteModal";
 
 export * from "./Modal";
 export * from "./RouteModal";
 
-export const MODAL_DIRECTIVES: any[] = [Modal, RouterModal];
+export const MODAL_DIRECTIVES: any[] = [Modal, RouteModal];
