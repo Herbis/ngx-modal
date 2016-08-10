@@ -1,8 +1,10 @@
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {Component} from "@angular/core";
-import {provideRouter, ROUTER_DIRECTIVES} from "@angular/router";
+import {provideRouter, ROUTER_DIRECTIVES, RouterModule} from "@angular/router";
 import {SimpleRouterModal} from "./SimpleRouterModal";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {Component, NgModule} from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 import {HomeComponent} from "./HomeComponent";
 import {NoCloseButtonModal} from "./NoCloseButtonModal";
 import {NoSimpleCloseModal} from "./NoSimpleCloseModal";
@@ -25,12 +27,33 @@ export class Sample2App {
 
 }
 
-bootstrap(Sample2App, [
-    provideRouter([
-        { path: "", component: HomeComponent },
-        { path: "simple-modal", component: SimpleRouterModal },
-        { path: "no-close-button-modal", component: NoCloseButtonModal },
-        { path: "no-simple-close-modal", component: NoSimpleCloseModal },
-    ]),
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-]).catch(err => console.error(err));
+@NgModule({
+
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot([
+            { path: "", component: HomeComponent },
+            { path: "simple-modal", component: SimpleRouterModal },
+            { path: "no-close-button-modal", component: NoCloseButtonModal },
+            { path: "no-simple-close-modal", component: NoSimpleCloseModal },
+        ])
+    ],
+    declarations: [
+        Sample2App,
+        HomeComponent,
+        SimpleRouterModal,
+        NoCloseButtonModal,
+        NoSimpleCloseModal
+    ],
+    bootstrap: [
+        Sample2App
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+    ]
+})
+export class Sample2Module {
+
+}
+
+platformBrowserDynamic().bootstrapModule(Sample2Module);
