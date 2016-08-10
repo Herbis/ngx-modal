@@ -123,6 +123,7 @@ export class RouteModal implements OnInit, OnDestroy {
         this.onOpen.emit(args);
         document.body.appendChild(this.backdropElement);
         window.setTimeout(() => this.modalRoot.nativeElement.focus(), 0);
+        document.body.className += "modal-open";
     }
 
     close(...args: any[]) {
@@ -131,6 +132,7 @@ export class RouteModal implements OnInit, OnDestroy {
 
         this.isOpened = false;
         this.onClose.emit(args);
+        document.body.className.replace(/modal-open\b/, "");
         if (this.cancelUrl)
             this.router.navigate(this.cancelUrl, this.cancelUrlExtras);
     }
@@ -145,7 +147,9 @@ export class RouteModal implements OnInit, OnDestroy {
 
     private createBackDrop() {
         this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop", "fade", "in");
+        this.backdropElement.classList.add("modal-backdrop");
+        this.backdropElement.classList.add("fade");
+        this.backdropElement.classList.add("in");
     }
 
 }
