@@ -125,7 +125,7 @@ export class Modal {
         this.isOpened = false;
         this.onClose.emit(args);
         document.body.removeChild(this.backdropElement);
-        document.body.className.replace(/modal-open\b/, "");
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
     }
 
     // -------------------------------------------------------------------------

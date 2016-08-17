@@ -1,10 +1,9 @@
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {provideRouter, ROUTER_DIRECTIVES, RouterModule} from "@angular/router";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {ROUTER_DIRECTIVES, RouterModule} from "@angular/router";
 import {SimpleRouterModal} from "./SimpleRouterModal";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {Component, NgModule} from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import {BrowserModule} from "@angular/platform-browser";
 import {HomeComponent} from "./HomeComponent";
 import {NoCloseButtonModal} from "./NoCloseButtonModal";
 import {NoSimpleCloseModal} from "./NoSimpleCloseModal";
