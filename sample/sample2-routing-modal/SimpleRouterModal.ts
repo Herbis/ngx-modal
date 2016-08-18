@@ -5,7 +5,7 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
 @Component({
     selector: "simple-router-modal",
     template: `
-<route-modal [cancelUrl]="['/']">
+<route-modal [cancelUrl]="['../']">
     <modal-header>
         <h1>I am first modal</h1>
     </modal-header>
@@ -13,7 +13,7 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
         This modal has its own header, content and footer.
     </modal-content>
     <modal-footer>
-        <button class="btn btn-primary" [routerLink]="['/']">okay!</button>
+        <button class="btn btn-primary" [routerLink]="['../']">okay!</button>
     </modal-footer>
 </route-modal>
 `,

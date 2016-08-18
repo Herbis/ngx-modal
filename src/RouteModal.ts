@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, ElementRef, ViewChild, OnDestroy, OnInit} from "@angular/core";
 import {NavigationExtras} from "@angular/router/src/router";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: "route-modal",
@@ -94,7 +94,8 @@ export class RouteModal implements OnInit, OnDestroy {
     // Constructor
     // -------------------------------------------------------------------------
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                private activatedRoute: ActivatedRoute) {
         this.createBackDrop();
     }
 
@@ -133,8 +134,14 @@ export class RouteModal implements OnInit, OnDestroy {
         this.isOpened = false;
         this.onClose.emit(args);
         document.body.className = document.body.className.replace(/modal-open\b/, "");
-        if (this.cancelUrl)
-            this.router.navigate(this.cancelUrl, this.cancelUrlExtras);
+
+        if (this.cancelUrl) {
+            let navigationExtras: NavigationExtras = { relativeTo: this.activatedRoute };
+            if (this.cancelUrlExtras) {
+                navigationExtras = Object.assign(this.cancelUrlExtras);
+            }
+            this.router.navigate(this.cancelUrl, navigationExtras);
+        }
     }
 
     // -------------------------------------------------------------------------
