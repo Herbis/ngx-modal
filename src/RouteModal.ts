@@ -141,6 +141,8 @@ export class RouteModal implements OnInit, OnDestroy {
                 navigationExtras = Object.assign(this.cancelUrlExtras);
             }
             this.router.navigate(this.cancelUrl, navigationExtras);
+        } else {
+            window.history.back();
         }
     }
 
