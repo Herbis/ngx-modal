@@ -1,6 +1,4 @@
 import {Component} from "@angular/core";
-import {RouteModal} from "../../src/RouteModal";
-import {ROUTER_DIRECTIVES} from "@angular/router";
 
 @Component({
     selector: "no-close-button-modal",
@@ -16,11 +14,7 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
         <button class="btn btn-primary" [routerLink]="['/']">okay!</button>
     </modal-footer>
 </route-modal>
-`,
-    directives: [
-        RouteModal,
-        ROUTER_DIRECTIVES
-    ]
+`
 })
 export class NoCloseButtonModal {
 

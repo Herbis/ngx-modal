@@ -1,7 +1,7 @@
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {Component, NgModule} from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import {Modal} from "../../src/index";
+import {Modal, ModalModule} from "../../src/index";
 
 @Component({
     selector: "app",
@@ -119,8 +119,7 @@ import {Modal} from "../../src/index";
     </div>
     
 </div>
-`,
-    directives: [Modal]
+`
 })
 export class Sample1App {
 
@@ -128,7 +127,8 @@ export class Sample1App {
 
 @NgModule({
     imports: [
-        BrowserModule
+        BrowserModule,
+        ModalModule
     ],
     declarations: [
         Sample1App

@@ -1,5 +1,5 @@
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
-import {ROUTER_DIRECTIVES, RouterModule} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import {SimpleRouterModal} from "./SimpleRouterModal";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Component, NgModule} from "@angular/core";
@@ -7,6 +7,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {HomeComponent} from "./HomeComponent";
 import {NoCloseButtonModal} from "./NoCloseButtonModal";
 import {NoSimpleCloseModal} from "./NoSimpleCloseModal";
+import {ModalModule} from "../../src/index";
 
 @Component({
     selector: "app",
@@ -19,17 +20,16 @@ import {NoSimpleCloseModal} from "./NoSimpleCloseModal";
 
     <router-outlet></router-outlet>
 </div>
-`,
-    directives: [ROUTER_DIRECTIVES]
+`
 })
 export class Sample2App {
 
 }
 
 @NgModule({
-
     imports: [
         BrowserModule,
+        ModalModule,
         RouterModule.forRoot([
             { path: "", component: HomeComponent },
             { path: "simple-modal", component: SimpleRouterModal },

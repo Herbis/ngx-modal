@@ -23,6 +23,8 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
 
 ## Simple Modal
 
+Import `ModalModule` in your app. Then you can use `modal` component:
+
 ```html
 <modal  title="Modal title"
         cancelButtonLabel="cancel"
@@ -52,6 +54,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
 
 ## Router Modal
 
+First, import `ModalModule` in your app.
 If you want your modals to be opened within routes,
 then `<route-modal></route-modal>` should be used instead.
 
@@ -59,7 +62,7 @@ then `<route-modal></route-modal>` should be used instead.
 
 ```typescript
 import {Component} from "@angular/core";
-import {MODAL_DIRECTIVES} from "ng2-modal";
+import {ModalModule} from "ng2-modal";
 
 @Component({
     selector: "app",
@@ -78,10 +81,25 @@ import {MODAL_DIRECTIVES} from "ng2-modal";
         </modal-footer>
     </modal>
 </div>
-    `,
-    directives: [MODAL_DIRECTIVES]
+    `
 })
 export class App {
+
+}
+
+@NgModule({
+    imports: [
+        // ...
+        ModalModule
+    ],
+    declarations: [
+        App
+    ],
+    bootstrap: [
+        App
+    ]
+})
+export class AppModule {
 
 }
 ```
