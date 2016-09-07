@@ -124,7 +124,7 @@ export class RouteModal implements OnInit, OnDestroy {
         this.onOpen.emit(args);
         document.body.appendChild(this.backdropElement);
         window.setTimeout(() => this.modalRoot.nativeElement.focus(), 0);
-        document.body.className += "modal-open";
+        document.body.className += " modal-open";
     }
 
     close(...args: any[]) {
