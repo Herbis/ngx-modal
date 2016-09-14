@@ -108,6 +108,7 @@ export class RouteModal implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        document.body.className = document.body.className.replace(/modal-open\b/, "");
         if (this.backdropElement && this.backdropElement.parentNode === document.body)
             document.body.removeChild(this.backdropElement);
     }
