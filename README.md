@@ -43,7 +43,7 @@ Import `ModalModule` in your app. Then you can use `modal` component:
 
     <modal-content>
         Modal body content goes there.
-    </modal-header>
+    </modal-content>
 
     <modal-footer>
         Modal footer content goes there.
