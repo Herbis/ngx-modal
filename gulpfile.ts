@@ -10,7 +10,6 @@ const tslint = require("gulp-tslint");
 const stylish = require("tslint-stylish");
 const ts = require("gulp-typescript");
 const sourcemaps = require("gulp-sourcemaps");
-const exec = require('child_process').exec;
 
 @Gulpclass()
 export class Gulpfile {
