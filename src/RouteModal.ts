@@ -10,8 +10,8 @@ import {Router, ActivatedRoute} from "@angular/router";
      role="dialog"
      #modalRoot
      (keydown.esc)="closeOnEscape ? close() : 0"
-     [class]="{ in: isOpened, fade: isOpened }"
-     [style]="{ display: isOpened ? 'block' : 'none' }"
+     [ngClass]="{ in: isOpened, fade: isOpened }"
+     [ngStyle]="{ display: isOpened ? 'block' : 'none' }"
      (click)="closeOnOutsideClick ? close() : 0">
     <div [class]="'modal-dialog ' + modalClass" (click)="preventClosing($event)">
         <div class="modal-content" tabindex="0" *ngIf="isOpened">
