@@ -1,6 +1,30 @@
 import {Component, Input, Output, EventEmitter, ElementRef, ViewChild} from "@angular/core";
 
 @Component({
+    selector: "modal-header",
+    template: `<ng-content></ng-content>`
+})
+export class ModalHeader {
+
+}
+
+@Component({
+    selector: "modal-content",
+    template: `<ng-content></ng-content>`
+})
+export class ModalContent {
+
+}
+
+@Component({
+    selector: "modal-footer",
+    template: `<ng-content></ng-content>`
+})
+export class ModalFooter {
+
+}
+
+@Component({
     selector: "modal",
     template: `
 <div class="modal" 
@@ -38,51 +62,51 @@ export class Modal {
     // -------------------------------------------------------------------------
 
     @Input()
-    modalClass: string;
+    public modalClass: string;
 
     @Input()
-    closeOnEscape: boolean = true;
+    public closeOnEscape: boolean = true;
 
     @Input()
-    closeOnOutsideClick: boolean = true;
+    public closeOnOutsideClick: boolean = true;
 
     @Input()
-    title: string;
+    public title: string;
 
     @Input()
-    hideCloseButton = false;
+    public hideCloseButton = false;
 
     @Input()
-    cancelButtonLabel: string;
+    public cancelButtonLabel: string;
 
     @Input()
-    submitButtonLabel: string;
+    public submitButtonLabel: string;
 
     // -------------------------------------------------------------------------
     // Outputs
     // -------------------------------------------------------------------------
 
     @Output()
-    onOpen = new EventEmitter(false);
+    public onOpen = new EventEmitter(false);
 
     @Output()
-    onClose = new EventEmitter(false);
+    public onClose = new EventEmitter(false);
 
     @Output()
-    onSubmit = new EventEmitter(false);
+    public onSubmit = new EventEmitter(false);
 
     // -------------------------------------------------------------------------
     // Public properties
     // -------------------------------------------------------------------------
 
-    isOpened = false;
+    public isOpened = false;
 
     // -------------------------------------------------------------------------
     // Private properties
     // -------------------------------------------------------------------------
 
     @ViewChild("modalRoot")
-    private modalRoot: ElementRef;
+    public modalRoot: ElementRef;
 
     private backdropElement: HTMLElement;
 
@@ -133,7 +157,7 @@ export class Modal {
     // Private Methods
     // -------------------------------------------------------------------------
 
-    private preventClosing(event: MouseEvent) {
+    public preventClosing(event: MouseEvent) {
         event.stopPropagation();
     }
 

@@ -35,6 +35,14 @@ export class Gulpfile {
             .pipe(shell(["tsc"]));
     }
 
+    @Task()
+    compileAoT() {
+        return gulp.src("*.js", { read: false })
+            .pipe(shell([
+                '"node_modules/.bin/ngc" -p tsconfig-aot.json'
+            ]));
+    }
+
     // -------------------------------------------------------------------------
     // Packaging and Publishing tasks
     // -------------------------------------------------------------------------
@@ -132,11 +140,28 @@ export class Gulpfile {
     }
 
     /**
+     * Creates an AoT package that can be published to npm.
+     */
+    @SequenceTask()
+    packageAoT() {
+        return [
+            "clean",
+            "compileAoT",
+            ["packagePreparePackageFile", "packageReadmeFile", "copyTypingsFile"]
+        ];
+    }
+
+    /**
      * Creates a package and publishes it to npm.
      */
     @SequenceTask()
     publish() {
         return ["package", "npmPublish"];
+    }
+
+    @SequenceTask()
+    publishAoT() {
+        return ["packageAoT", "npmPublish"];
     }
     
     // -------------------------------------------------------------------------
