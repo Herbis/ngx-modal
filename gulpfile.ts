@@ -37,11 +37,11 @@ export class Gulpfile {
     }
 
     @Task()
-    compileAot() {
-        exec('"node_modules/.bin/ngc" -p "tsconfig-aot.json"', (err: any, stdout: any, stderr: any) => {
-            console.log('ngc output:', stdout);
-            console.log('ngc stderr:', stderr);
-        });
+    compileAoT() {
+        return gulp.src("*.js", { read: false })
+            .pipe(shell([
+                '"node_modules/.bin/ngc" -p tsconfig-aot.json'
+            ]));
     }
 
     // -------------------------------------------------------------------------
@@ -141,11 +141,28 @@ export class Gulpfile {
     }
 
     /**
+     * Creates an AoT package that can be published to npm.
+     */
+    @SequenceTask()
+    packageAoT() {
+        return [
+            "clean",
+            "compileAoT",
+            ["packagePreparePackageFile", "packageReadmeFile", "copyTypingsFile"]
+        ];
+    }
+
+    /**
      * Creates a package and publishes it to npm.
      */
     @SequenceTask()
     publish() {
         return ["package", "npmPublish"];
+    }
+
+    @SequenceTask()
+    publishAoT() {
+        return ["packageAoT", "npmPublish"];
     }
     
     // -------------------------------------------------------------------------
