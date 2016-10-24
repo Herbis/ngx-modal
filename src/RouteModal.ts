@@ -40,53 +40,53 @@ export class RouteModal implements OnInit, OnDestroy {
     // -------------------------------------------------------------------------
 
     @Input()
-    cancelUrl: any[];
+    public cancelUrl: any[];
 
     @Input()
-    cancelUrlExtras: NavigationExtras;
+    public cancelUrlExtras: NavigationExtras;
 
     @Input()
-    modalClass: string;
+    public modalClass: string;
 
     @Input()
-    closeOnEscape: boolean = true;
+    public closeOnEscape: boolean = true;
 
     @Input()
-    closeOnOutsideClick: boolean = true;
+    public closeOnOutsideClick: boolean = true;
 
     @Input()
-    title: string;
+    public title: string;
 
     @Input()
-    hideCloseButton = false;
+    public hideCloseButton = false;
 
     @Input()
-    cancelButtonLabel: string;
+    public cancelButtonLabel: string;
 
     @Input()
-    submitButtonLabel: string;
+    public submitButtonLabel: string;
 
     // -------------------------------------------------------------------------
     // Outputs
     // -------------------------------------------------------------------------
 
     @Output()
-    onOpen = new EventEmitter(false);
+    public onOpen = new EventEmitter(false);
 
     @Output()
-    onClose = new EventEmitter(false);
+    public onClose = new EventEmitter(false);
 
     @Output()
-    onSubmit = new EventEmitter(false);
+    public onSubmit = new EventEmitter(false);
 
     // -------------------------------------------------------------------------
     // Private properties
     // -------------------------------------------------------------------------
 
     @ViewChild("modalRoot")
-    private modalRoot: ElementRef;
+    public modalRoot: ElementRef;
 
-    private isOpened = false;
+    public isOpened = false;
 
     private backdropElement: HTMLElement;
 
@@ -151,7 +151,7 @@ export class RouteModal implements OnInit, OnDestroy {
     // Private Methods
     // -------------------------------------------------------------------------
 
-    private preventClosing(event: MouseEvent) {
+    public preventClosing(event: MouseEvent) {
         event.stopPropagation();
     }
 
