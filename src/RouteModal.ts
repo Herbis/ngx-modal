@@ -43,7 +43,7 @@ export class RouteModal implements OnInit, OnDestroy {
     public cancelUrl: any[];
 
     @Input()
-    public cancelUrlExtras: NavigationExtras;
+    public cancelUrlExtras: { relative: boolean } & NavigationExtras;
 
     @Input()
     public modalClass: string;
@@ -137,11 +137,15 @@ export class RouteModal implements OnInit, OnDestroy {
         document.body.className = document.body.className.replace(/modal-open\b/, "");
 
         if (this.cancelUrl) {
-            let navigationExtras: NavigationExtras = { relativeTo: this.activatedRoute };
+            let navigationExtras: NavigationExtras = { };
             if (this.cancelUrlExtras) {
-                navigationExtras = (<any>Object).assign(this.cancelUrlExtras);
+                if (this.cancelUrlExtras.relative) {
+                    navigationExtras.relativeTo = this.activatedRoute;
+                }
+                navigationExtras = (Object as any).assign(navigationExtras, this.cancelUrlExtras);
             }
             this.router.navigate(this.cancelUrl, navigationExtras);
+
         } else {
             window.history.back();
         }
