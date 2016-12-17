@@ -77,25 +77,6 @@ export class Gulpfile {
     }
 
     /**
-     * Moves all compiled files to the final package directory.
-     */
-    @Task()
-    packageMoveCompiledFiles() {
-        return gulp.src("./build/package/src/**/*")
-            .pipe(gulp.dest("./build/package"));
-    }
-
-    /**
-     * Moves all compiled files to the final package directory.
-     */
-    @Task()
-    packageClearCompileDirectory(cb: Function) {
-        return del([
-            "./build/package/src/**"
-        ], cb);
-    }
-
-    /**
      * Change the "private" state of the packaged package.json file to public.
      */
     @Task()
@@ -132,20 +113,6 @@ export class Gulpfile {
     package() {
         return [
             "clean",
-            "packageCompile",
-            "packageMoveCompiledFiles",
-            "packageClearCompileDirectory",
-            ["packagePreparePackageFile", "packageReadmeFile", "copyTypingsFile"]
-        ];
-    }
-
-    /**
-     * Creates an AoT package that can be published to npm.
-     */
-    @SequenceTask()
-    packageAoT() {
-        return [
-            "clean",
             "compileAoT",
             ["packagePreparePackageFile", "packageReadmeFile", "copyTypingsFile"]
         ];
@@ -159,11 +126,6 @@ export class Gulpfile {
         return ["package", "npmPublish"];
     }
 
-    @SequenceTask()
-    publishAoT() {
-        return ["packageAoT", "npmPublish"];
-    }
-    
     // -------------------------------------------------------------------------
     // Run tests tasks
     // -------------------------------------------------------------------------
