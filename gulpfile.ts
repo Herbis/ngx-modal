@@ -32,12 +32,6 @@ export class Gulpfile {
     @Task()
     compile() {
         return gulp.src("*.js", { read: false })
-            .pipe(shell(["tsc"]));
-    }
-
-    @Task()
-    compileAoT() {
-        return gulp.src("*.js", { read: false })
             .pipe(shell([
                 "\"node_modules/.bin/ngc\" -p tsconfig-aot.json"
             ]));
@@ -113,7 +107,7 @@ export class Gulpfile {
     package() {
         return [
             "clean",
-            "compileAoT",
+            "compile",
             ["packagePreparePackageFile", "packageReadmeFile", "copyTypingsFile"]
         ];
     }
