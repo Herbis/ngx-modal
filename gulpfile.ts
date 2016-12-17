@@ -31,7 +31,7 @@ export class Gulpfile {
      */
     @Task()
     compile() {
-        return gulp.src("*.js", { read: false })
+        return gulp.src("package.json", { read: false })
             .pipe(shell([
                 "\"node_modules/.bin/ngc\" -p tsconfig-aot.json"
             ]));
@@ -46,7 +46,7 @@ export class Gulpfile {
      */
     @Task()
     npmPublish() {
-        return gulp.src("*.js", { read: false })
+        return gulp.src("package.json", { read: false })
             .pipe(shell([
                 "cd ./build/package && npm publish"
             ]));
