@@ -1,4 +1,4 @@
-import {Gulpclass, Task, SequenceTask, MergedTask} from "gulpclass";
+import {Gulpclass, Task, SequenceTask} from "gulpclass";
 
 const gulp = require("gulp");
 const del = require("del");
@@ -8,8 +8,6 @@ const mocha = require("gulp-mocha");
 const chai = require("chai");
 const tslint = require("gulp-tslint");
 const stylish = require("tslint-stylish");
-const ts = require("gulp-typescript");
-const sourcemaps = require("gulp-sourcemaps");
 
 @Gulpclass()
 export class Gulpfile {
@@ -50,24 +48,6 @@ export class Gulpfile {
             .pipe(shell([
                 "cd ./build/package && npm publish"
             ]));
-    }
-
-    /**
-     * Copies all sources to the package directory.
-     */
-    @MergedTask()
-    packageCompile() {
-        const tsProject = ts.createProject("tsconfig.json");
-        const tsResult = gulp.src(["./src/**/*.ts", "./typings/**/*.ts"])
-            .pipe(sourcemaps.init())
-            .pipe(ts(tsProject));
-
-        return [
-            tsResult.dts.pipe(gulp.dest("./build/package")),
-            tsResult.js
-                .pipe(sourcemaps.write(".", { sourceRoot: "", includeContent: true }))
-                .pipe(gulp.dest("./build/package"))
-        ];
     }
 
     /**
