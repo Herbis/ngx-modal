@@ -1,4 +1,4 @@
-# ng2-modal
+# ngx-modal
 
 Open modal window (dialog box) for your angular2 applications using bootstrap3. If you don't want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it, or create an issue if you have problems with it.
 
@@ -6,17 +6,17 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
 
 1. Install npm module:
     
-    `npm install ng2-modal --save`
+    `npm install ngx-modal --save`
 
 2. If you are using system.js you may want to add this into `map` and `package` config:
 
     ```json
     {
         "map": {
-            "ng2-modal": "node_modules/ng2-modal"
+            "ngx-modal": "node_modules/ngx-modal"
         },
         "packages": {
-            "ng2-modal": { "main": "index.js", "defaultExtension": "js" }
+            "ngx-modal": { "main": "index.js", "defaultExtension": "js" }
         }
     }
     ```
@@ -62,7 +62,7 @@ then `<route-modal></route-modal>` should be used instead.
 
 ```typescript
 import {Component} from "@angular/core";
-import {ModalModule} from "ng2-modal";
+import {ModalModule} from "ngx-modal";
 
 @Component({
     selector: "app",
@@ -218,5 +218,5 @@ export class AppModule {
 </div>
 ```
 
-Take a look on samples in [./sample](https://github.com/pleerock/ng2-modal/tree/master/sample) for more examples of
+Take a look on samples in [./sample](https://github.com/pleerock/ngx-modal/tree/master/sample) for more examples of
 usages.
