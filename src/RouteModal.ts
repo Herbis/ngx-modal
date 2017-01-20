@@ -12,8 +12,8 @@ import {Router, ActivatedRoute} from "@angular/router";
      (keydown.esc)="closeOnEscape ? close() : 0"
      [ngClass]="{ in: isOpened, fade: isOpened }"
      [ngStyle]="{ display: isOpened ? 'block' : 'none' }"
-     (click)="backdropClick($event)">
-    <div [class]="'modal-dialog ' + modalClass" #modalContent>
+     (click)="closeOnOutsideClick ? close() : 0">
+    <div [class]="'modal-dialog ' + modalClass" (click)="preventClosing($event)">
         <div class="modal-content" tabindex="0" *ngIf="isOpened">
             <div class="modal-header">
                 <button *ngIf="!hideCloseButton" type="button" class="close" data-dismiss="modal" [attr.aria-label]="cancelButtonLabel || 'Close'" (click)="close()"><span aria-hidden="true">&times;</span></button>
@@ -82,9 +82,6 @@ export class RouteModal implements OnInit, OnDestroy {
     // -------------------------------------------------------------------------
     // Private properties
     // -------------------------------------------------------------------------
-
-    @ViewChild('modalContent')
-    private contentEl: ElementRef;
 
     @ViewChild("modalRoot")
     public modalRoot: ElementRef;
@@ -157,12 +154,6 @@ export class RouteModal implements OnInit, OnDestroy {
     // -------------------------------------------------------------------------
     // Private Methods
     // -------------------------------------------------------------------------
-
-    private backdropClick(event: MouseEvent): void {
-        if (this.closeOnOutsideClick === true && !this.contentEl.nativeElement.contains(event.target)) {
-            this.close();
-        }
-    }
 
     public preventClosing(event: MouseEvent) {
         event.stopPropagation();
