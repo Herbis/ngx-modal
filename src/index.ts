@@ -3,8 +3,8 @@ import {RouteModal} from "./RouteModal";
 import {NgModule} from "@angular/core";
 import {CommonModule} from '@angular/common';
 
-export * from "./Modal";
-export * from "./RouteModal";
+export { Modal, ModalContent, ModalFooter, ModalHeader } from "./Modal";
+export { RouteModal } from "./RouteModal";
 
 @NgModule({
     imports: [ CommonModule ],
