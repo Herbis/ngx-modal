@@ -66,6 +66,9 @@ export class RouteModal implements OnInit, OnDestroy {
     @Input()
     public submitButtonLabel: string;
 
+    @Input()
+    public backdrop:boolen = true;
+
     // -------------------------------------------------------------------------
     // Outputs
     // -------------------------------------------------------------------------
@@ -161,9 +164,11 @@ export class RouteModal implements OnInit, OnDestroy {
 
     private createBackDrop() {
         this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop");
         this.backdropElement.classList.add("fade");
         this.backdropElement.classList.add("in");
+        if(this.backdrop) {
+            this.backdropElement.classList.add("modal-backdrop");
+        }
     }
 
 }

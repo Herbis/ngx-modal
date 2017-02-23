@@ -82,6 +82,9 @@ export class Modal {
     @Input()
     public submitButtonLabel: string;
 
+    @Input()
+    public backdrop:boolen = true;
+
     // -------------------------------------------------------------------------
     // Outputs
     // -------------------------------------------------------------------------
@@ -163,9 +166,11 @@ export class Modal {
 
     private createBackDrop() {
         this.backdropElement = document.createElement("div");
-        this.backdropElement.classList.add("modal-backdrop");
         this.backdropElement.classList.add("fade");
         this.backdropElement.classList.add("in");
+        if(this.backdrop) {
+            this.backdropElement.classList.add("modal-backdrop");
+        }
     }
 
 }
