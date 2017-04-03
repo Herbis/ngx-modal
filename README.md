@@ -1,3 +1,7 @@
+> This repository is for demonstration purposes of how it can be implemented in Angular and is not maintaned.
+Please fork and maintain your own version of this repository.
+
+
 # ngx-modal
 
 Open modal window (dialog box) for your angular2 applications using bootstrap3. If you don't want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it, or create an issue if you have problems with it.
