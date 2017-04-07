@@ -200,7 +200,7 @@ export class AppModule {
     </modal>
 </div>
 
-<!-- eighth modal: this modal can listen close event -->
+<!-- eighth modal: this modal can listen open event -->
 <div class="row">
     <button (click)="eighthModal.open()">it opens first modal right after you open it</button>
     <modal #eighthModal title="I am eighth modal" cancelButtonLabel="close it" (onOpen)="firstModal.open()">
