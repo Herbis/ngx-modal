@@ -1,5 +1,4 @@
-This repository is maintained.
-
+`This fork of ngx-modal is actively maintained.` 
 
 # ngx-modal
 
@@ -9,20 +8,8 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
 
 1. Install npm module:
     
-    `npm install ngx-modal --save`
+    `npm install @herbis/ngx-modal --save`
 
-2. If you are using system.js you may want to add this into `map` and `package` config:
-
-    ```json
-    {
-        "map": {
-            "ngx-modal": "node_modules/ngx-modal"
-        },
-        "packages": {
-            "ngx-modal": { "main": "index.js", "defaultExtension": "js" }
-        }
-    }
-    ```
 
 ## Simple Modal
 
@@ -221,5 +208,5 @@ export class AppModule {
 </div>
 ```
 
-Take a look on samples in [./sample](https://github.com/pleerock/ngx-modal/tree/master/sample) for more examples of
+Take a look on samples in [./sample](https://github.com/Herbis/ngx-modal/tree/master/sample) for more examples of
 usages.
