@@ -1,5 +1,4 @@
-> This repository is for demonstration purposes of how it can be implemented in Angular and is not maintaned.
-Please fork and maintain your own version of this repository.
+This repository is maintained.
 
 
 # ngx-modal
