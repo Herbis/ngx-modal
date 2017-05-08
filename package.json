@@ -1,20 +1,20 @@
 {
   "name": "ngx-modal",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Open modal window (dialog box) for your angular2 applications using bootstrap3.",
   "license": "MIT",
   "readmeFilename": "README.md",
   "private": true,
   "author": {
-    "name": "Umed Khudoiberdiev",
-    "email": "pleerock.me@gmail.com"
+    "name": "Herberts Markuns (forker), Umed Khudoiberdiev (original)",
+    "email": "herbis33@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pleerock/ngx-modal.git"
+    "url": "https://github.com/Herbis/ngx-modal.git"
   },
   "bugs": {
-    "url": "https://github.com/pleerock/ngx-modal/issues"
+    "url": "https://github.com/Herbis/ngx-modal/issues"
   },
   "tags": [
     "modal",
