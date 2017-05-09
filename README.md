@@ -52,7 +52,7 @@ then `<route-modal></route-modal>` should be used instead.
 
 ```typescript
 import {Component} from "@angular/core";
-import {ModalModule} from "ngx-modal";
+import {ModalModule} from "@herbis/ngx-modal";
 
 @Component({
     selector: "app",

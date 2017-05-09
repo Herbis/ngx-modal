@@ -7,7 +7,7 @@ const replace = require("gulp-replace");
 const mocha = require("gulp-mocha");
 const chai = require("chai");
 const tslint = require("gulp-tslint");
-const stylish = require("tslint-stylish");
+const stylish = require("tslint");
 const ts = require("gulp-typescript");
 const rename = require("gulp-rename");
 const file = require("gulp-file");
@@ -109,7 +109,7 @@ export class Gulpfile {
     @Task()
     bundleCopyMainFile() {
         return gulp.src("./package.json", { read: false })
-            .pipe(file(packageName + ".ts", `export * from "./${packageName}/index";`))
+            .pipe(file(packageName + ".ts", `export * from "./${packageName.replace(/@[a-z]*\//, "")}/index";`))
             .pipe(gulp.dest("./build/bundle"));
     }
 
@@ -149,6 +149,17 @@ export class Gulpfile {
         return gulp.src("package.json", { read: false })
             .pipe(shell([
                 "cd ./build/package && npm publish"
+            ]));
+    }
+
+    /**
+     * Publishes a package to npm from ./build/package directory as beta.
+     */
+    @Task()
+    npmPublishBeta() {
+        return gulp.src("package.json", { read: false })
+            .pipe(shell([
+                "cd ./build/package && npm publish --tag beta"
             ]));
     }
 
@@ -193,6 +204,14 @@ export class Gulpfile {
     @SequenceTask()
     publish() {
         return ["package", "npmPublish"];
+    }
+
+    /**
+     * Creates a package and publishes it to npm as a beta.
+     */
+    @SequenceTask()
+    publishBeta() {
+        return ["package", "npmPublishBeta"];
     }
 
     // -------------------------------------------------------------------------
