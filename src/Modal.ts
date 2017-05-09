@@ -143,7 +143,7 @@ export class Modal {
         document.body.appendChild(this.backdropElement);
         document.body.className += " modal-open";
 
-		window.setTimeout(() => {
+        window.setTimeout(() => {
             this.modalRoot.nativeElement.scrollTop = 0;
             this.modalRoot.nativeElement.focus();
             this.onOpen.emit(args);
@@ -154,10 +154,10 @@ export class Modal {
         if (!this.isOpened)
             return;
         
-		document.body.removeChild(this.backdropElement);
+        document.body.removeChild(this.backdropElement);
         document.body.className = document.body.className.replace(/modal-open\b/, "");
 		
-		this.isOpened = false;
+        this.isOpened = false;
         this.onClose.emit(args);
     }
 
@@ -173,7 +173,7 @@ export class Modal {
         this.backdropElement = document.createElement("div");
         this.backdropElement.classList.add("fade");
         this.backdropElement.classList.add("in");
-        if(this.backdrop) {
+        if (this.backdrop) {
             this.backdropElement.classList.add("modal-backdrop");
         }
     }

@@ -126,7 +126,7 @@ export class RouteModal implements OnInit, OnDestroy {
         
         this.isOpened = true;
         document.body.appendChild(this.backdropElement);
-		document.body.className += " modal-open";
+        document.body.className += " modal-open";
 				
         window.setTimeout(() => {
             this.modalRoot.nativeElement.scrollTop = 0;
@@ -170,7 +170,7 @@ export class RouteModal implements OnInit, OnDestroy {
         this.backdropElement = document.createElement("div");
         this.backdropElement.classList.add("fade");
         this.backdropElement.classList.add("in");
-        if(this.backdrop) {
+        if (this.backdrop) {
             this.backdropElement.classList.add("modal-backdrop");
         }
     }
