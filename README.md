@@ -1,6 +1,9 @@
-`This fork of ngx-modal is actively maintained.` 
-
+This fork of [ngx-modal](https://github.com/pleerock/ngx-modal) is **actively** maintained. 
+___
 # ngx-modal
+
+[![Build Status](https://travis-ci.org/Herbis/ngx-modal.svg?branch=master)](https://travis-ci.org/Herbis/ngx-modal)
+[![npm version](https://img.shields.io/npm/v/@herbis/ngx-modal.svg)](https://www.npmjs.com/package/@herbis/ngx-modal)
 
 Open modal window (dialog box) for your angular2 applications using bootstrap3. If you don't want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it, or create an issue if you have problems with it.
 
