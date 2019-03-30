@@ -1,4 +1,4 @@
-This fork of [ngx-modal](https://github.com/pleerock/ngx-modal) is **actively** maintained. 
+This fork of [ngx-modal](https://github.com/pleerock/ngx-modal) accepts PRs but is no longer actively maintained. 
 ___
 # ngx-modal
 
