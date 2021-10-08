@@ -108,7 +108,7 @@ export class Modal {
     // Private properties
     // -------------------------------------------------------------------------
 
-    @ViewChild("modalRoot")
+    @ViewChild("modalRoot", {static: true})
     public modalRoot: ElementRef;
 
     private backdropElement: HTMLElement;
