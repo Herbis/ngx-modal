@@ -184,6 +184,15 @@ export class Gulpfile {
             .pipe(gulp.dest("./build/package"));
     }
 
+    @SequenceTask()
+    buildSomething() {
+        return [
+            "clean",
+            ["bundleCopySources", "bundleCopyMainFile"],
+            ["compile", "compileBundles"]
+        ];
+    }
+
     /**
      * Creates a package that can be published to npm.
      */

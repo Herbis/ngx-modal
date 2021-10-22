@@ -12,7 +12,9 @@
     "noImplicitAny": true,
     "declaration": true,
     "skipLibCheck": true,
-    "stripInternal": true
+    "stripInternal": true,
+      "rootDir":"src",
+
   },
   "exclude": [
 	"build",
