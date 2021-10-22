@@ -10,7 +10,7 @@ Open modal window (dialog box) for your angular2 applications using bootstrap3. 
 
 | Version   | Angular Version |
 |-----------|-----------------|
-| 8.0.0     |         8+      |
+| 8.0.1     |         8+      |
 | 0.1.0     |         2+      |
 
 ## Installation

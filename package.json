@@ -1,6 +1,6 @@
 {
   "name": "@herbis/ngx-modal",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Open modal window (dialog box) for your angular2 applications using bootstrap3.",
   "license": "MIT",
   "readmeFilename": "README.md",
