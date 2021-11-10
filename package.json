@@ -1,7 +1,8 @@
 {
   "name": "@herbis/ngx-modal",
   "version": "8.0.1",
-  "description": "Open modal window (dialog box) for your angular2 applications using bootstrap3.",
+  "type": "module",
+  "description": "Open modal window (dialog box) for your Angular applications using bootstrap3.",
   "license": "MIT",
   "readmeFilename": "README.md",
   "private": true,
@@ -23,19 +24,19 @@
     "angular2-modal"
   ],
   "peerDependencies": {
-    "@angular/core": ">=8.0.0",
-    "@angular/router": ">=8.0.0"
+    "@angular/core": ">=9.0.0",
+    "@angular/router": ">=9.0.0"
   },
   "devDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
-    "@types/node": "^7.0.0",
+    "@angular/common": "^10.2.5",
+    "@angular/compiler": "^10.2.5",
+    "@angular/compiler-cli": "^10.2.5",
+    "@angular/core": "^10.2.5",
+    "@angular/forms": "^10.2.5",
+    "@angular/platform-browser": "^10.2.5",
+    "@angular/platform-browser-dynamic": "^10.2.5",
+    "@angular/router": "^10.2.5",
+    "@types/node": "^12.0.0",
     "bootstrap": "^3.3.7",
     "chai": "^3.4.1",
     "del": "^2.2.2",
@@ -56,9 +57,9 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "systemjs": "0.19.42",
-    "tslint": "4.5.0",
-    "typescript": "3.5.1",
-    "zone.js": "~0.9.1"
+    "tslint": "^5.0.0",
+    "typescript": "~4.0.8",
+    "zone.js": "~0.10.2"
   },
   "scripts": {
     "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
